@@ -851,6 +851,9 @@
 .gauge-svg {
   width: 100%;
   max-width: 120px;
+  height: auto;
+  aspect-ratio: 120 / 68;
+  overflow: visible;
 }
 
 .gauge-label {

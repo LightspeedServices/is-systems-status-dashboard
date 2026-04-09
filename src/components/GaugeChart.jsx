@@ -2,14 +2,14 @@
  * Semi-circular gauge chart (like Salesforce Inspector's Org Limits view).
  *
  * SVG geometry:
- *   - viewBox "0 0 120 70"
- *   - Circle centre: (60, 62), radius: 46
+ *   - viewBox "0 0 120 68"
+ *   - Circle centre: (60, 60), radius: 48
  *   - Arc sweeps 180° from 9 o'clock through 12 o'clock to 3 o'clock
  */
 
 const CX = 60;
-const CY = 62;
-const R = 46;
+const CY = 60;
+const R = 48;
 const STROKE = 10;
 
 // Full semi-circle background path (left → top → right)
@@ -60,7 +60,7 @@ export default function GaugeChart({ label, max, remaining, loading = false }) {
 
   return (
     <div className={`gauge-card${loading ? ' gauge-card--loading' : ''}`}>
-      <svg viewBox="0 0 120 70" className="gauge-svg" aria-hidden="true">
+      <svg viewBox="0 0 120 68" className="gauge-svg" aria-hidden="true">
         {/* Track */}
         <path
           d={BG_PATH}
@@ -82,7 +82,7 @@ export default function GaugeChart({ label, max, remaining, loading = false }) {
         {/* Percentage label */}
         <text
           x={CX}
-          y={CY - 14}
+          y={CY - 16}
           textAnchor="middle"
           dominantBaseline="middle"
           fontSize="15"
