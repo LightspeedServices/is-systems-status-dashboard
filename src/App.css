@@ -157,13 +157,13 @@
 .status-card--outage      { border-left: 3px solid var(--color-outage); }
 .status-card--unknown     { border-left: 3px solid var(--color-unknown); }
 
-/* ── Production instance highlight (red) ─────────────────────────────────── */
+/* ── Production instance highlight (blue) ────────────────────────────────── */
 .status-card--prod {
-  background: rgba(239, 68, 68, 0.05);
-  border-top: 2px solid rgba(239, 68, 68, 0.45);
+  background: rgba(59, 130, 246, 0.05);
+  border-top: 2px solid rgba(59, 130, 246, 0.45);
 }
 .status-card--prod:hover {
-  background: rgba(239, 68, 68, 0.09);
+  background: rgba(59, 130, 246, 0.09);
 }
 
 .prod-badge {
@@ -174,9 +174,9 @@
   font-size: 0.625rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  background: rgba(239, 68, 68, 0.12);
-  color: #dc2626;
-  border: 1px solid rgba(239, 68, 68, 0.35);
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+  border: 1px solid rgba(59, 130, 246, 0.35);
   flex-shrink: 0;
 }
 

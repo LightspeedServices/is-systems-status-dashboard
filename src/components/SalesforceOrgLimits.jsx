@@ -40,6 +40,15 @@ function saveOrgs(orgs) {
 
 const BLANK_FORM = { label: '', instanceUrl: '', accessToken: '', apiVersion: 'v66.0' };
 
+const PRESET_ORGS = [
+  { label: 'LSCORE PROD',    instanceUrl: 'https://lightspeedretail.my.salesforce.com' },
+  { label: 'LSCORE FULL',    instanceUrl: 'https://lightspeedretail--full.sandbox.my.salesforce.com' },
+  { label: 'UPSERVE PROD',   instanceUrl: 'https://upservepos.my.salesforce.com' },
+  { label: 'NuOrder Prod',   instanceUrl: 'https://nuorder.lightning.force.com' },
+  { label: 'Shopkeep Prod',  instanceUrl: 'https://shopkeep.my.salesforce.com' },
+  { label: 'Gastrofix Prod', instanceUrl: 'https://gastrofix.my.salesforce.com' },
+];
+
 // ── Mock data ────────────────────────────────────────────────────────────────
 const MOCK_LIMITS = {
   DataStorageMB:                        { Max: 546059,      Remaining: -36182     },
@@ -354,6 +363,23 @@ export default function SalesforceOrgLimits() {
         <form className="sf-config" onSubmit={handleSave} autoComplete="off" noValidate>
           <h3 className="sf-config__title">{configMode === 'add' ? 'Add Salesforce Org' : `Edit: ${activeOrg?.label}`}</h3>
           <div className="sf-config__fields">
+            <div className="sf-config__field">
+              <label className="sf-config__label" htmlFor="sf-org-preset">Quick Select</label>
+              <select
+                id="sf-org-preset"
+                className="sf-config__input"
+                value=""
+                onChange={(e) => {
+                  const preset = PRESET_ORGS.find((p) => p.instanceUrl === e.target.value);
+                  if (preset) setForm((f) => ({ ...f, label: preset.label, instanceUrl: preset.instanceUrl }));
+                }}
+              >
+                <option value="">— choose a preset org —</option>
+                {PRESET_ORGS.map((p) => (
+                  <option key={p.instanceUrl} value={p.instanceUrl}>{p.label}</option>
+                ))}
+              </select>
+            </div>
             <div className="sf-config__field">
               <label className="sf-config__label" htmlFor="sf-org-label">Org Label</label>
               <input id="sf-org-label" type="text" className="sf-config__input" placeholder="e.g. LSCORE PROD" value={form.label} onChange={(e) => setForm((f) => ({ ...f, label: e.target.value }))} required />
