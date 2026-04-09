@@ -1,0 +1,58 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #f0f4f9;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f8fafc;
+  --color-border: #dde1ea;
+  --color-text-primary: #1a1d2e;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #9ca3af;
+
+  --color-operational: #16a34a;
+  --color-operational-bg: rgba(22, 163, 74, 0.09);
+  --color-operational-border: rgba(22, 163, 74, 0.25);
+
+  --color-degraded: #d97706;
+  --color-degraded-bg: rgba(217, 119, 6, 0.09);
+  --color-degraded-border: rgba(217, 119, 6, 0.25);
+
+  --color-outage: #dc2626;
+  --color-outage-bg: rgba(220, 38, 38, 0.09);
+  --color-outage-border: rgba(220, 38, 38, 0.25);
+
+  --color-unknown: #6b7280;
+  --color-unknown-bg: rgba(107, 114, 128, 0.09);
+  --color-unknown-border: rgba(107, 114, 128, 0.25);
+
+  --color-accent: #4f46e5;
+  --color-accent-hover: #4338ca;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
+
+  font-size: 16px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--color-accent-hover);
+}
